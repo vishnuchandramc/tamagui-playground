@@ -41,12 +41,12 @@ export const Main = styled(YStack, {
 });
 
 export const Title = styled(H1, {
-  color: '#000',
+  color: '$color',
   size: '$12',
 });
 
 export const Subtitle = styled(SizableText, {
-  color: '#38434D',
+  color: '$color',
   size: '$9',
 });
 
@@ -55,6 +55,12 @@ const config = createTamagui({
     color: {
       background: 'gray',
       text: 'black',
+    },
+  },
+  dark: {
+    color: {
+      background: 'red',
+      text: 'white',
     },
   },
   defaultFont: 'body',

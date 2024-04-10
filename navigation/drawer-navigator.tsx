@@ -6,14 +6,23 @@ import { HeaderButton } from 'components/HeaderButton';
 import { RootStackParamList } from '.';
 import TabNavigator from './tab-navigator';
 import Home from '../screens/home';
+import { useTheme } from 'tamagui';
 
 type Props = StackScreenProps<RootStackParamList, 'DrawerNavigator'>;
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator({ navigation }: Props) {
+  const theme = useTheme();
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator
+      screenOptions={{
+        drawerContentStyle: { backgroundColor: theme.purple1.val },
+        drawerActiveTintColor: theme.purple10.val,
+        drawerInactiveTintColor: theme.purple10.val,
+        headerTintColor: theme.color.val,
+        headerStyle: { backgroundColor: theme.purple2.val, shadowColor: 'transparent' },
+      }}>
       <Drawer.Screen
         name="Home"
         component={Home}
