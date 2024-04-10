@@ -17,11 +17,11 @@ export default function DrawerNavigator({ navigation }: Props) {
   return (
     <Drawer.Navigator
       screenOptions={{
-        drawerContentStyle: { backgroundColor: theme.purple1.val },
-        drawerActiveTintColor: theme.purple10.val,
-        drawerInactiveTintColor: theme.purple10.val,
+        drawerContentStyle: { backgroundColor: theme.orange1.val },
+        drawerActiveTintColor: theme.orange10.val,
+        drawerInactiveTintColor: theme.orange10.val,
         headerTintColor: theme.color.val,
-        headerStyle: { backgroundColor: theme.purple2.val, shadowColor: 'transparent' },
+        headerStyle: { backgroundColor: theme.orange2.val, shadowColor: theme.shadowColor.val },
       }}>
       <Drawer.Screen
         name="Home"

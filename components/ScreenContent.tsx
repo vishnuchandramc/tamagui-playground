@@ -1,6 +1,4 @@
 import { YStack, H1, Separator, Theme } from 'tamagui';
-
-import { EditScreenInfo } from './EditScreenInfo';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'react-native';
 
@@ -10,12 +8,16 @@ type ScreenContentProps = {
   children?: React.ReactNode;
 };
 
-export const ScreenContent = ({ title, path, children }: ScreenContentProps) => {
+export const ScreenContent = ({ children }: ScreenContentProps) => {
   const isDarkMode = useColorScheme() == 'dark';
   return (
-    <Theme name="purple">
+    <Theme name="orange">
       <StatusBar style={isDarkMode ? 'light' : 'dark'} />
-      <YStack flex={1} alignItems="center" justifyContent="center" backgroundColor={'$background'}>
+      <YStack
+        flex={1}
+        alignItems="center"
+        justifyContent="flex-start"
+        backgroundColor={'$background'}>
         {children}
       </YStack>
     </Theme>

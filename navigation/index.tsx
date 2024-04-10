@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import DrawerNavigator from './drawer-navigator';
 import Modal from '../screens/modal';
+import { useTheme } from 'tamagui';
 
 export type RootStackParamList = {
   DrawerNavigator: undefined;
@@ -13,6 +14,7 @@ export type RootStackParamList = {
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function RootStack() {
+  const theme = useTheme();
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="DrawerNavigator">
@@ -24,7 +26,13 @@ export default function RootStack() {
         <Stack.Screen
           name="Modal"
           component={Modal}
-          options={{ presentation: 'modal', headerLeft: () => null }}
+          options={{
+            presentation: 'modal',
+            headerLeft: () => null,
+            headerBackgroundContainerStyle: { backgroundColor: theme.orange1.val },
+            headerTintColor: theme.color.val,
+            headerStyle: { backgroundColor: theme.orange2.val, shadowColor: theme.shadowColor.val },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
